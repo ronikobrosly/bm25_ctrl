@@ -1,0 +1,30 @@
+1,All SageMaker notebooks must not have direct internet access
+2,AWS Simple Email Service must enable content spam malware scanning
+3,AWS SQS queues must not be publicly accessible
+4,One machine roles and human roles must not have access to AWS Secrets Manager to update or modify secret
+5,AWS IAM Identity Center must not be used to manage any COF AWS Accounts, IAM roles, policies or resources in COF
+6,RAM must not share resources outside of COF AWS Orgs and Accounts and No RAM Invitation from non-COF AWS Or
+7,All Amazon FSx for Windows file systems must be joined with AWS Managed Microsoft AD
+8,Workspaces directories may only be configured with Capital One Active Directory via AD Connectors
+9,All ALBs must have access logging enabled
+10,All ELBs must have access logging enabled for restricted perimeter accounts
+11,All Classic Load Balancer (CLB/ELB) must have access logging enabled
+12,On an annual basis, the Cloud Safety Team reviews the results of automated validation of existing high risk Cloud Control Custodian policies
+13,On a monthly basis, the Cloud Safety Team reviews the results of automated validation of existing critical risk Cloud Control Custodian policies
+14,To reduce the risk of inappropriate access, upon occurrence, Cloud Custodian validates that Lambda Functions in Production (PROD) and Card Data Environments (CDE) deny access
+15,Cloud Custodian validates that Elastic Container Registry (ECR) Policies in Production (PROD) and Card Data Environments (CDE) are configured to restrict public access
+16,All S3 buckets must have encryption at rest enabled
+17,All RDS instances must have encryption at rest enabled
+18,All EC2 instances must have IMDSv2 enabled
+19,All IAM users must have MFA enabled
+20,All AWS accounts must have CloudTrail enabled
+21,All CloudTrail logs must be encrypted
+22,All CloudWatch alarms must be configured for high-priority events
+23,API Gateway must have WAF enabled
+24,Lambda functions must not have public access
+25,All AWS resources must have appropriate tags
+26,DynamoDB tables must have point-in-time recovery enabled
+27,All SNS topics must have access policies restricting public access
+28,All API Gateway stages must have appropriate authentication
+29,Cognito user pools must enforce strong password policies
+30,All Route53 zones must have DNSSEC enabled 

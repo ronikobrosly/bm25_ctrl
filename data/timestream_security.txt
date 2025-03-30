@@ -1,0 +1,77 @@
+Security in Timestream for LiveAnalytics
+Cloud security at AWS is the highest priority. As an AWS customer, you benefit from a data center
+and network architecture that is built to meet the requirements of the most security-sensitive
+organizations.
+Security is a shared responsibility between AWS and you. The shared responsibility model describes
+this as security of the cloud and security in the cloud:
+• Security of the cloud – AWS is responsible for protecting the infrastructure that runs AWS
+services in the AWS Cloud. AWS also provides you with services that you can use securely. The
+Security 
+Amazon Timestream Developer Guide
+effectiveness of our security is regularly tested and verified by third-party auditors as part of the
+AWS compliance programs. To learn about the compliance programs that apply to Timestream
+for LiveAnalytics, see AWS Services in Scope by Compliance Program.
+• Security in the cloud – Your responsibility is determined by the AWS service that you use. You
+are also responsible for other factors including the sensitivity of your data, your organization's
+requirements, and applicable laws and regulations.
+
+Data Protection
+Timestream for LiveAnalytics encrypts all data at rest and in transit by default. Timestream for
+LiveAnalytics provides data encryption for data at rest. Timestream for LiveAnalytics uses an AWS
+owned AWS Key Management Service (AWS KMS) key to encrypt all the data.
+Amazon Timestream employs multi-level security through access control, encryption and VPC endpoints
+to help control access to your data. All data in Amazon Timestream is encrypted at rest with
+AWS-owned keys by default. If you choose to use your own customer master key, Timestream
+integrates with AWS KMS to provide that capability. This way, data stored at rest, including file
+metadata, query results and other data stored in Amazon Timestream, is secured using encryption keys
+managed in AWS KMS.
+
+Timestream Identity-Based Policies
+With IAM identity-based policies, you can specify allowed or denied actions and resources as well as
+the conditions under which actions are allowed or denied. Timestream for LiveAnalytics supports
+specific actions, resources, and condition keys. To learn about all of the elements that you use in a JSON
+policy, see IAM JSON Policy Elements Reference in the IAM User Guide.
+
+Actions
+Administrators can use AWS JSON policies to specify who has access to what. That is, which principal can
+perform actions on what resources, and under what conditions.
+The Action element of a JSON policy describes the actions that you can use to allow or deny access in a
+policy. Policy actions usually have the same name as the associated AWS API operation. There are some
+exceptions, such as permission-only actions that don't have a matching API operation. There are also
+some operations that require multiple actions in a policy.
+
+Resource Types
+The Resource element specifies the object or objects to which the action applies. Statements must
+include either a Resource or a NotResource element. As a best practice, specify a resource using its
+Amazon Resource Name (ARN). You can do this for actions that support a specific resource type, known
+as resource-level permissions.
+For actions that don't support resource-level permissions, such as listing operations, use a wildcard (*) to
+indicate that the statement applies to all resources.
+
+Logging and Monitoring
+Monitoring is an important part of maintaining the reliability, availability, and performance of Timestream
+for LiveAnalytics and your other AWS solutions. AWS provides the following monitoring tools to watch
+Timestream for LiveAnalytics, report when something is wrong, and take automatic actions when
+appropriate:
+• Amazon CloudWatch monitors your AWS resources and the applications you run on AWS in real
+time. You can collect and track metrics, create customized dashboards, and set alarms that notify
+you or take actions when a specified metric reaches a threshold that you specify.
+• AWS CloudTrail captures API calls and related events made by or on behalf of your AWS account
+and delivers the log files to an Amazon S3 bucket that you specify. You can identify which users
+and accounts called AWS, the source IP address from which the calls were made, and when the
+calls occurred.
+
+Compliance Validation
+Third-party auditors assess the security and compliance of Amazon Timestream as part of multiple AWS
+compliance programs. These include SOC, PCI, FedRAMP, HIPAA, and others.
+To learn whether an AWS service is within the scope of specific compliance programs, see AWS Services
+in Scope by Compliance Program and choose the compliance program that you are interested in. For
+general information, see AWS Compliance Programs.
+You can download third-party audit reports using AWS Artifact. For more information, see Downloading
+Reports in AWS Artifact.
+Your compliance responsibility when using Amazon Timestream is determined by the sensitivity of your
+data, your company's compliance objectives, and applicable laws and regulations. AWS provides the
+following resources to help with compliance:
+• Security and Compliance Quick Start Guides – These deployment guides discuss architectural
+considerations and provide steps for deploying security- and compliance-focused baseline
+environments on AWS. 
