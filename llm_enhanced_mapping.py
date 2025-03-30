@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 LLM-Enhanced Control Mapping for Cloud Services.
 This module extends the base control mapping pipeline with LLM-powered enhancements.
@@ -8,7 +7,29 @@ import os
 import json
 import time
 from typing import Dict, List, Any, Optional, Tuple
+
 from ctrl_mapping import ControlMapper
+from c1.aiml.inference_client import Client
+
+client = Client()
+
+
+prompt = """
+<|begin_of_text|><|start header_id|›system<|end_header_id|>
+You-are a helpful, brilliant, honest cyber security assistant 
+<|eot_id|>
+
+
+<|begin_of_text|><|start header_id|user<|end_header_id|>
+Something something
+<|eot_id|>
+
+
+<|begin_of_text|><|start header_id|assistant<|end_header_id|>
+"""
+response = client.generate(prompt, model="1lama-3-70b", max_new_tokens=3000)
+
+
 
 # Sample prompt template for LLM
 LLM_PROMPT_TEMPLATE = """

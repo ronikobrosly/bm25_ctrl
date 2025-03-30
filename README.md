@@ -57,26 +57,14 @@ The pipeline consists of several components working together:
 * Prepare your analyst threat paragraph
 
 2) Run the pipeline
+
 ```
-# On Linux/Mac
-   ./run_pipeline.sh --controls data/your_controls.csv --service "AWS New Service" --doc data/service_doc.pdf --note "Your analyst threat paragraph"
-   
-# On Windows
-   .\run_pipeline.ps1 --controls data\your_controls.csv --service "AWS New Service" --doc data\service_doc.pdf --note "Your analyst threat paragraph"
+python run_unified_pipeline.py \
+  --controls data/controls.csv \
+  --service "AWS Timestream" \
+  --doc "AWS_Services_Documentation.pdf" \
+  --note "A threat agent misconfigured inbound connection settings, allowing unauthorized access to sensitive resources" \
+  --output output/timestream_results.json \
+  --start-page 425 \
+  --end-page 451
 ```
-
-3) Review the results
-
-* Output JSON file will be created in the output directory
-* The format matches your required structure
-* Output should look like this:
-{
-     "AWS New Service": {
-       "3": "low",
-       "44": "high",
-       "423": "medium",
-       "333": "high"
-     }
-}
-
-Where integers represent controls 
